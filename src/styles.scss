@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @use "tailwindcss";
 
+@theme {
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+}
+
 html,
 body {
   height: 100%;

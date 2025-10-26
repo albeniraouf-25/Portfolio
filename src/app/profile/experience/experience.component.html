@@ -10,21 +10,19 @@
     <div class="text-center mb-4">
       @if(!!experience.company.link){
       <a [href]="experience.company.link" target="_blank">
+        @if(experience.company.image){
         <img
-          *ngIf="experience.company.image"
           [src]="experience.company.image"
           [style]="experience.company.imageStyle"
           class="mx-auto"
         />
-        <h3
-          *ngIf="
-            experience.company.showName ||
-            (!experience.company.image && !experience.company.link)
-          "
-          class="text-xl font-semibold mt-2"
-        >
+        } 
+        @if (experience.company.showName || (!experience.company.image &&
+        !experience.company.link) ) {
+        <h3 class="text-xl font-semibold mt-2">
           {{ experience.company.name }}
         </h3>
+        }
       </a>
       } @else {
       <img
@@ -32,10 +30,12 @@
         [style]="experience.company.imageStyle"
         class="mx-auto"
       />
+      @if (experience.company.showName || (!experience.company.image &&
+      !experience.company.link) ) {
       <h3 class="text-xl font-semibold mt-2">
         {{ experience.company.name }}
       </h3>
-      }
+      } }
 
       <!-- <hr class="my-4 border-gray-200" /> -->
       <p class="text-gray-700 text-left leading-relaxed">
