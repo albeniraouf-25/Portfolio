@@ -47,7 +47,7 @@ export const profile: Profile = {
       positions: [
         {
           title: 'Software Developer',
-          type: 'Part-Time Remote',
+          type: 'Full-Time Remote',
           startDate: new Date('2025-10-01'),
           coreFunctionalities: ['Backend Development'],
           technologiesAndLanguages: [
@@ -66,6 +66,7 @@ export const profile: Profile = {
             'ESLint',
             'Automation Tests',
             'Stripe',
+            'React'
           ],
         },
         {
