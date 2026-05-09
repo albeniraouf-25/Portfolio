@@ -4,6 +4,38 @@ export const profile: Profile = {
   experiences: [
     {
       company: {
+        location: 'Los Angeles, USA',
+        name: 'Better Earth',
+        link: 'https://betterearth.solar',
+        image: 'resources/experience/betterearth.png',
+        imageStyle: 'height: 5rem !important; padding: 0 0 1rem 0;',
+        description: `Better Earth provides residential solar energy systems and battery storage solutions that help homeowners become less dependent on conventional power sources. The company prioritizes a seamless customer journey, in-house installation, and lasting reliability to promote the shift toward renewable energy.`,
+        showName: false,
+      },
+      positions: [
+        {
+          title: 'Software Developer',
+          type: 'Full-Time Remote',
+          startDate: new Date('2026-05-01'),
+          coreFunctionalities: ['Software Development', 'Technical Support'],
+          technologiesAndLanguages: [
+            'Ubuntu',
+            'Linux',
+            'Git',
+            'Node',
+            'Python',
+            'Django',
+            'PostgreSQL',
+            'QuickBase',
+            'Zapier',
+            'AWS',
+            'Notion'
+          ],
+        }
+      ],
+    },
+    {
+      company: {
         location: 'As Suwayda, Syria',
         name: 'Lumina Team',
         link: 'https://lumina-team.org',
@@ -209,9 +241,25 @@ export const profile: Profile = {
     },
   ],
   skills: [
+    'Agile',
     'Angular',
+    'Automation Tests',
+    'AWS',
     'Bash',
+    'Confluence',
+    'Django',
+    'ESLint',
     'Express',
+    'Flutter',
+    'Git',
+    'Jira',
+    'JWT',
+    'Kubernetes',
+    'Mailgun',
+    'Microsoft Word',
+    'MVC',
+    'Node',
+    'Notion',
     'Prisma',
     'PostgreSQL',
     'MySQL',
@@ -224,6 +272,10 @@ export const profile: Profile = {
     'NPM',
     'C++',
     'Java',
+    'QuickBase',
+    'SMTP',
+    'TypeORM',
+    'TypeScript',
     'Typescript',
     'PHP',
     'React',
@@ -233,6 +285,8 @@ export const profile: Profile = {
     'MS Office',
     'RxJS',
     'Stripe',
+    'Ubuntu',
+    'Zapier',
   ],
   educations: [
     {
