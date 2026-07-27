@@ -340,7 +340,7 @@ export const profile: Profile = {
         icon: 'instagram',
       },
     ],
-    whoAmI: `I am a dedicated Information Engineering student and an accomplished Full-Stack Software Developer, leading a high-performing team with a focus on cutting-edge web development solutions. With extensive experience in delivering robust, scalable applications, I excel in architecting end-to-end systems that drive innovation and efficiency.<br><br>My passion for technology fuels my ability to rapidly adapt to new challenges, master emerging tools, and deliver superior results under pressure. I am committed to pushing boundaries, fostering collaboration, and consistently producing high-quality, impactful work.`,
+    whoAmI: `I'm a Full-Stack Software Developer, led a high-performing team with a focus on cutting-edge web development solutions. With extensive experience in delivering robust, scalable applications, I excel in architecting end-to-end systems that drive innovation and efficiency.<br><br>My passion for technology fuels my ability to rapidly adapt to new challenges, master emerging tools, and deliver superior results under pressure. I am committed to pushing boundaries, fostering collaboration, and consistently producing high-quality, impactful work.`,
     emails: ['raouf.albeni@gmail.com', 'raouf.albeni@yahoo.com'],
     phones: ['+963 949 294 811', '+963 981 241 453'],
   },
