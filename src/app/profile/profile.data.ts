@@ -319,11 +319,11 @@ export const profile: Profile = {
     addressOnMap: 'https://maps.app.goo.gl/XULPUYCtjJMK2Wau6',
     languages: ['Arabic (Native Language)', 'English (Intermidate)'],
     accounts: [
-      {
-        url: 'https://www.linkedin.com/in/albeniraouf',
-        website: 'LinkedIn',
-        icon: 'linkedin',
-      },
+      // {
+      //   url: 'https://www.linkedin.com/in/albeniraouf',
+      //   website: 'LinkedIn',
+      //   icon: 'linkedin',
+      // },
       {
         url: 'https://github.com/albeniraouf',
         website: 'Github',
