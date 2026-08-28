@@ -1,0 +1,17 @@
+# SPA fallback for Apache/LiteSpeed (Hostinger): serve existing files/dirs as-is,
+# route everything else to the app entry. Ignored by GitHub Pages (harmless).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # let real files and directories (e.g. /ar/, /assets/…, /resources/…) through
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # anything else falls back to the single-page app
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# also serve the SPA on 404 (covers hosts that skip the rewrite)
+ErrorDocument 404 /index.html
