@@ -1,0 +1,105 @@
+.learn {
+  padding-block: clamp(4rem, 9vw, 7rem);
+}
+
+.learn__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.lcard {
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  border-radius: 16px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.lcard:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-2);
+  box-shadow: 0 22px 44px -30px rgba(33, 28, 22, 0.5);
+}
+
+.lcard__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--indigo);
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.1rem;
+}
+.lcard__icon--gold {
+  color: var(--saffron);
+  border-color: color-mix(in srgb, var(--saffron) 40%, var(--line));
+  background: color-mix(in srgb, var(--saffron) 12%, var(--paper));
+}
+
+.lcard__span {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.45rem;
+}
+.lcard h3 {
+  font-size: 1.32rem;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.lcard__degree {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin-bottom: 1.1rem;
+}
+
+.lcard__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: auto;
+}
+.lcard__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+}
+.lcard__list svg {
+  color: var(--saffron);
+  flex: none;
+  margin-top: 0.28rem;
+}
+
+.lcard--cert {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--saffron) 12%, var(--paper-2)), var(--paper-2) 55%);
+}
+.lcard__cert {
+  margin-top: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.lcard__cert img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .learn__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .learn__grid {
+    grid-template-columns: 1fr;
+  }
+}

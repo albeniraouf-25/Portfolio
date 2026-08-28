@@ -1,47 +1,22 @@
 {
-  "name": "portfolio",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --configuration production --base-href \"https://raoufalbeni.com/\"",
-    "deploy": "npx angular-cli-ghpages --dir=dist/browser --cname raoufalbeni.com"
-  },
+  "name": "portfolio-react",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@angular/common": "^20.0.3",
-    "@angular/compiler": "^20.0.3",
-    "@angular/core": "^20.0.3",
-    "@angular/forms": "^20.0.3",
-    "@angular/platform-browser": "^20.0.3",
-    "@angular/platform-browser-dynamic": "^20.0.3",
-    "@angular/router": "^20.0.3",
-    "@ng-icons/core": "^31.3.0",
-    "@ng-icons/font-awesome": "^31.3.0",
-    "@tailwindcss/postcss": "^4.1.5",
-    "gsap": "^3.13.0",
-    "http-server": "^14.1.1",
-    "moment": "^2.30.1",
-    "ngx-typed-writer": "^1.5.1",
-    "postcss": "^8.5.3",
-    "rxjs": "~7.8.0",
-    "tailwindcss": "^4.1.5",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@angular/build": "^20.0.2",
-    "@angular/cli": "^20.0.2",
-    "@angular/compiler-cli": "^20.0.3",
-    "@types/jasmine": "~5.1.0",
-    "angular-cli-ghpages": "^2.0.3",
-    "jasmine-core": "~5.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "postcss": "^8.5.3",
-    "typescript": "~5.8.3"
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   }
 }

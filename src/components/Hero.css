@@ -1,0 +1,242 @@
+.hero {
+  position: relative;
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+  overflow: hidden;
+}
+
+.hero__field {
+  mask-image: radial-gradient(ellipse 80% 70% at 70% 30%, #000, transparent 75%);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  padding-top: clamp(1.5rem, 5vw, 3rem);
+}
+
+[dir='rtl'] .hero__name{
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+.hero__intro .kicker {
+  font-size: clamp(1rem, 3vw, 2rem);
+  margin-bottom: 1.4rem;
+}
+
+[dir='rtl'] .hero__name{
+  font-size: clamp(3.1rem, 9vw, 5rem);
+}
+.hero__name {
+  font-size: clamp(3.1rem, 9vw, 3rem);
+  line-height: 0.94;
+  margin-bottom: 1.6rem;
+}
+/* entrance plays once the boot splash lifts (html.booted set by src/boot.ts) */
+.booted .hero__name {
+  animation: rise 0.8s 0.05s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero__name-2 {
+  /* display: block; */
+  color: var(--saffron);
+  /* font-style: italic; */
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.2rem;
+}
+.booted .hero__actions {
+  animation: rise 0.8s 0.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.hero__social {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.hero__social-link {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+  color: var(--ink-soft);
+  transition: color 0.18s, border-color 0.18s, background 0.18s, transform 0.18s;
+}
+.hero__social-link:hover {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.hero__origin {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+[dir='rtl'] .hero__origin {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.9rem;
+}
+
+/* ---- portrait ---- */
+
+.hero__portrait-wrap {
+}
+.booted .hero__portrait-wrap {
+  animation: rise 0.9s 0.25s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero__panel {
+  position: relative;
+  background: var(--indigo);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  overflow: hidden;
+  box-shadow: 0 34px 60px -34px rgba(31, 45, 69, 0.7);
+}
+
+.hero__star {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 1;
+  /* 8-point star frame (r=33 inner keeps the face) */
+  clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+  background: var(--paper);
+}
+.hero__star img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transform: scale(2) translate(00px, 55px);
+}
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.8rem, 3vw, 1.6rem);
+  margin-top: 1.4rem;
+}
+
+.hero__stats > div {
+  text-align: center;
+}
+.hero__stats dt {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  line-height: 1;
+  color: var(--ink);
+}
+.hero__stats dd {
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.2rem;
+}
+.hero__stat-sep {
+  color: var(--saffron);
+  opacity: 0.7;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* hide the origin line entirely when its text is empty in content.ts */
+.hero__origin:empty {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+  .hero__portrait-wrap {
+    max-width: 440px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+
+/* phone: centered, tighter composition */
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 1rem;
+  }
+  .hero__inner {
+    padding-top: 0.5rem;
+    gap: 2rem;
+    text-align: center;
+  }
+  .hero__intro .kicker {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .hero__name {
+    font-size: clamp(2.7rem, 13vw, 3.4rem);
+    margin-bottom: 1.4rem;
+  }
+  .hero__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-bottom: 1.6rem;
+  }
+  .hero__actions .btn {
+    justify-content: center;
+  }
+  .hero__meta {
+    justify-content: center;
+    padding-top: 1.2rem;
+  }
+  .hero__social {
+    justify-content: center;
+  }
+  .hero__portrait-wrap {
+    max-width: 320px;
+  }
+  .hero__panel {
+    padding: 1.3rem;
+  }
+  .hero__stats {
+    margin-top: 1.1rem;
+  }
+}

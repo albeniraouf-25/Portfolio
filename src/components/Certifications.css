@@ -1,0 +1,125 @@
+.certs {
+  padding-block: clamp(4rem, 9vw, 7rem);
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.certs__list {
+  display: grid;
+  gap: 1.2rem;
+}
+/* two-up once there's more than one award */
+@media (min-width: 780px) {
+  .certs__list:has(.cert + .cert) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cert {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: clamp(1.2rem, 3vw, 2rem);
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+}
+/* single award: give the row a comfortable max width, centred */
+.certs__list:not(:has(.cert + .cert)) .cert {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.cert__field {
+  mask-image: radial-gradient(circle at 95% 5%, #000, transparent 55%);
+}
+
+.cert__media {
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  display: block;
+  transition: transform 0.25s;
+}
+.cert__media:hover {
+  transform: translateY(-3px);
+}
+.cert__media img {
+  width: 100%;
+  object-fit: contain;
+  max-height: 220px;
+}
+
+.cert__body {
+  position: relative;
+  z-index: 1;
+}
+
+.cert__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--saffron-deep);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  padding: 0.32rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--saffron) 40%, var(--line));
+  background: color-mix(in srgb, var(--saffron) 10%, transparent);
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+.cert__badge svg {
+  color: var(--saffron);
+}
+
+.cert__date {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.35rem;
+}
+[dir='rtl'] .cert__date {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.cert__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.1;
+  margin-bottom: 0.7rem;
+}
+
+.cert__desc {
+  color: var(--ink-soft);
+  max-width: 48ch;
+  margin-bottom: 1.2rem;
+}
+
+.cert__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+.cert__mark svg {
+  color: var(--saffron);
+}
+
+@media (max-width: 620px) {
+  .cert {
+    grid-template-columns: 1fr;
+  }
+  .cert__media img {
+    max-height: 260px;
+  }
+}
